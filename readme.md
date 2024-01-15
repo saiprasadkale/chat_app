@@ -1,0 +1,1 @@
+This is a chat app based on websocket. I'll update this readme further down the line as we progress.
