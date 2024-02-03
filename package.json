@@ -1,0 +1,16 @@
+{
+  "name": "talk-a-tive",
+  "version": "1.0.0",
+  "description": "This is a chat app based on websocket. I'll update this readme further down the line as we progress.",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon backend/server.js"
+  },
+  "author": "Saiprasad Kale",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.1",
+    "express": "^4.18.2",
+    "nodemon": "^3.0.3"
+  }
+}
