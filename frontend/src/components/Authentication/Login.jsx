@@ -12,7 +12,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 
-const Login = async () => {
+const Login = () => {
   const [email, setEmail] = useState();
   const [show, setShow] = useState();
   const [loading, setLoading] = useState(false);
@@ -22,7 +22,7 @@ const Login = async () => {
   const submitHandler = async () => {
     setLoading(true);
     if (!email || !password) {
-      useToast({
+      toast({
         title: "Please fill all the fields",
         status: "warning",
         duration: 5000,
@@ -52,8 +52,8 @@ const Login = async () => {
       });
       localStorage.setItem("userInfo", JSON.stringify(data));
       setLoading(false);
-      history.push("/chats");
-    } catch (err) {
+      history.push("/chat");
+    } catch (error) {
       toast({
         title: "Error occured",
         description: error.response.data.message,
@@ -71,6 +71,7 @@ const Login = async () => {
       <FormControl id="email" isRequired>
         <FormLabel>Email</FormLabel>
         <Input
+          value={email}
           type="email"
           placeholder="Enter Your Email"
           onChange={(e) => setEmail(e.target.value)}
@@ -80,6 +81,7 @@ const Login = async () => {
         <FormLabel>Password</FormLabel>
         <InputGroup>
           <Input
+            value={password}
             type={show ? "text" : "password"}
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
